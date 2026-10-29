@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 10%, #312e81 0, transparent 35%),
+    radial-gradient(circle at 90% 90%, #164e63 0, transparent 35%), #080b18;
+  color: #f8fafc;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 16px;
+}
+
+/* Form Card */
+.user-form {
+  width: 100%;
+  max-width: 470px;
+  padding: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 24px;
+  background: rgba(17, 24, 48, 0.88);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(99, 102, 241, 0.12);
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading */
+.form-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.form-heading h1 {
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  background: linear-gradient(90deg, #a5b4fc, #67e8f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.form-heading p {
+  margin-top: 8px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* Input Groups */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group > label,
+.group-title {
+  display: block;
+  margin-bottom: 10px;
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Text and Email */
+.form-group input[type='text'],
+.form-group input[type='email'] {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  outline: none;
+  background: rgba(15, 23, 42, 0.85);
+  color: #f8fafc;
+  font-family: inherit;
+  font-size: 13px;
+  transition: 0.25s ease;
+}
+
+.form-group input::placeholder {
+  color: #64748b;
+}
+
+.form-group input[type='text']:focus,
+.form-group input[type='email']:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.13);
+  background: #111a32;
+}
+
+/* Radio and Checkbox Layout */
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.option-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  border: 1px solid #334155;
+  border-radius: 11px;
+  background: rgba(30, 41, 59, 0.55);
+  color: #cbd5e1;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.option-card:hover {
+  border-color: #818cf8;
+  background: rgba(99, 102, 241, 0.12);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.option-card:has(input:checked) {
+  border-color: #818cf8;
+  background: rgba(99, 102, 241, 0.18);
+  color: #fff;
+}
+
+.option-card input {
+  width: 16px;
+  height: 16px;
+  accent-color: #818cf8;
+  cursor: pointer;
+}
+
+/* Submit Button */
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 52px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(110deg, #6366f1, #8b5cf6, #06b6d4);
+  color: white;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.submit-btn span {
+  font-size: 21px;
+  transition: transform 0.25s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.4);
+}
+
+.submit-btn:hover span {
+  transform: translateX(4px);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+.submit-btn:focus-visible {
+  outline: 2px solid #a5b4fc;
+  outline-offset: 4px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .user-form {
+    padding: 26px 20px;
+    border-radius: 20px;
+  }
+
+  .form-heading h1 {
+    font-size: 23px;
+  }
+
+  .option-card {
+    padding: 10px 11px;
+    font-size: 12px;
+  }
+}
